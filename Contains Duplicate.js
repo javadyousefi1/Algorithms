@@ -44,3 +44,25 @@ var containsDuplicate = function (nums) {
 
     return false;
 };
+
+var containsDuplicate = function (nums) {
+    nums.sort();
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] === nums[i - 1]) return true;
+    }
+    return false;
+};
+
+var containsDuplicate = function (nums) {
+    const seen = new Set();
+    for (const num of nums) {
+        if (seen.has(num)) return true;
+        seen.add(num);
+    }
+    return false;
+};
+
+var containsDuplicate = function (nums) {
+    return new Set(nums).size !== nums.length;
+};
+
